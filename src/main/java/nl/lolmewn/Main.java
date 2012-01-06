@@ -36,8 +36,8 @@ public class Main extends JavaPlugin{
 		doConfig();
 		needed = config.getInt("bonemeals", 10);
 		checked.add(Material.PUMPKIN);
-		checked.add(Material.SEEDS);
-		checked.add(Material.SUGAR_CANE);
+		checked.add(Material.CROPS);
+		checked.add(Material.SUGAR_CANE_BLOCK);
 		checked.add(Material.MELON);
 		getServer().getPluginManager().registerEvent(Event.Type.BLOCK_BREAK, new FBlock(this), Priority.Normal, this);
 		getServer().getPluginManager().registerEvent(Event.Type.PLAYER_INTERACT, new FPlay(this), Priority.Normal, this);
