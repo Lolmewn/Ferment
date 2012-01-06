@@ -73,6 +73,9 @@ public class Main extends JavaPlugin{
 						//Break it
 						counter.remove(b.getLocation());
 					}
+				}else{
+					p.sendMessage("You can't break it yet, you have to use " + (needed) + " more bonemeal on it!");
+					event.setCancelled(true);
 				}
 			}
 		}
@@ -87,10 +90,12 @@ public class Main extends JavaPlugin{
 		
 		@Override
 		public void onPlayerInteract(final PlayerInteractEvent event){
+			event.getPlayer().sendMessage("debug");
 			if(!event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
 				return;
 			}
 			Player p = event.getPlayer();
+			p.sendMessage("Item: " + event.getItem().getType().name().toLowerCase());
 			//If player has bonemeal in hand and touches one of the items, do stuff
 			if(p.getItemInHand().getTypeId() == 351 && p.getItemInHand().getData().getData() == (byte)0x15){
 				p.sendMessage("Yep");
