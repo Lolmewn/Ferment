@@ -95,7 +95,7 @@ public class Main extends JavaPlugin{
 				return;
 			}
 			Player p = event.getPlayer();
-			p.sendMessage("Item: " + event.getItem().getType().name().toLowerCase());
+			p.sendMessage("Item: " + event.getClickedBlock().getType().name().toLowerCase());
 			//If player has bonemeal in hand and touches one of the items, do stuff
 			if(p.getItemInHand().getTypeId() == 351 && p.getItemInHand().getData().getData() == (byte)0x15){
 				p.sendMessage("Yep");
